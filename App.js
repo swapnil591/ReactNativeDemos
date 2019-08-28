@@ -80,46 +80,40 @@ import {
 // };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
   body: {
-    flex : 1,
-    backgroundColor: Colors.white,
-    justifyContent : "center",
-    alignItems : "center",
+    flex : 1
+     
+  },  
+  half1:{
+    flex: 1,
+    backgroundColor: 'red',
+    justifyContent: 'center',
+    alignItems: 'center'
+
   },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  half2:{
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: 'blue'
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: 'blue',
-    alignItems : "center",
+  half2x:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
+  half21:{
+    backgroundColor: 'green',
+  
   },
-  highlight: {
-    fontWeight: '700',
+  half22:{
+    backgroundColor: 'black',
+  
   },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
+  text:{
+    color: 'white',
+    fontSize: 30
+
+  }
 });
 
 export default class App extends Component{
@@ -151,7 +145,17 @@ export default class App extends Component{
   render(){
     return (
       <View style={styles.body}>
-       <Text style={[styles.sectionTitle, this.state.customStyle]}>Hello World</Text>
+        <View style={styles.half1}>
+          <Text style={styles.text}>This is 1</Text>
+        </View>
+        <View style={styles.half2}>
+          <View style={[styles.half2x, styles.half21]}>
+          <Text style={styles.text}>This is 2/1</Text>
+          </View>
+          <View style={[styles.half22, styles.half2x]}>
+          <Text style={styles.text}>This is 2/2</Text>
+          </View>
+        </View>
       </View>
     );
   }
